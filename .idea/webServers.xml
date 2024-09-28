@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c40f2a60-33f1-4325-9424-50e28bb85fd8" name="turandot">
+        <fileTransfer accessType="SFTP" host="132.68.39.199" port="22" sshConfigId="d4b371b6-d39d-4a64-8c1e-ae79f1a0ea4b" sshConfig="turandot">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="18fadd33-7adb-41a2-8223-f668e2cf571c" name="juliet">
+        <fileTransfer accessType="SFTP" host="132.68.39.20" port="22" sshConfigId="9f569635-9eac-42f9-a5d4-6de900a1f605" sshConfig="juliet">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="a0bfda27-952a-4dba-a641-46c25f953983" name="mozart">
+        <fileTransfer accessType="SFTP" host="132.68.39.98" port="22" sshConfigId="e9c56c30-cee4-49b3-a1e9-cfc1b0e03a12" sshConfig="mozart">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

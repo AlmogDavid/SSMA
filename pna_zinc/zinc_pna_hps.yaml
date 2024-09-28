@@ -1,0 +1,20 @@
+program: pna_zinc/main.py
+name: zinc_pna_hps
+method: grid
+parameters:
+  runs: # Num runs
+    value: 5
+  use_ssma:
+    value: "true"
+  mlp_compression:
+    values: [0.1, 0.25, 0.5, 0.75, 1.0]
+  use_attention:
+    values: ["true", "false"]
+  max_neighbors:
+    values: [2, 3, 4]
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args}

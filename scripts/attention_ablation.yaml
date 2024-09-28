@@ -1,0 +1,27 @@
+program: scripts/run_single_exp.sh
+name: attention_ablation
+method: grid
+parameters:
+  dataset: # DS
+    values: ["ogbn_arxiv", "proteins"]
+  layer: # Layer
+    values: ["gcn", "gat", "gin"]
+  ssma: # Whether to use SSMA or not
+    value: "true"
+  runs: # Num runs
+    value: 5
+  mlp_compression:
+    values: [0.25]
+  max_neighbors:
+    values: [2, 3, 4, 5, 6, 7]
+  parameter_budget:
+    value: 500000
+  use_attention:
+    values: [ "true", "false" ]
+
+
+command:
+  - ${env}
+  - sh
+  - ${program}
+  - ${args_no_hyphens}

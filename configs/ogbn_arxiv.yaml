@@ -1,0 +1,17 @@
+defaults:
+  - base
+  - _self_
+
+# Data
+dataset: OGBNArxiv
+use_edge_feat: false
+
+# Model
+model: OGBNNet
+depth: 3
+hidden_dim: 256
+readout: ~
+
+# Training
+batch_size: 2
+

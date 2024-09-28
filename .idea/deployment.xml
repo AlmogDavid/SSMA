@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+    <option name="confirmBeforeUploading" value="false" />
+    <serverData>
+      <paths name="carlotta">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/almogdavid/workspace/ssma" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="juliet">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/almogdavid/workspace/ssma" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="mozart">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/almogdavid/workspace/ssma" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="turandot">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/almogdavid/workspace/ssma" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="turandot (2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/almogdavid/workspace/ssma" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+defaults:
+  - base
+  - _self_
+
+# Data
+dataset: ZINC
+
+# Model
+model: MolEmbNet
+depth: 10
+hidden_dim: 64
+residual: False
+readout: sum
+
+# Training
+batch_size: 128
+lr_schedule_patience: 20
+parameter_budget: 100000
+weight_decay: 3e-6

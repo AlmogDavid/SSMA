@@ -1,0 +1,21 @@
+program: scripts/run_single_exp.sh
+name: paper_exp_baselines
+method: grid
+parameters:
+  dataset: # DS
+    values: [ "enzymes", "imdb_binary", "mutag", "ogbg_molhiv", "ogbg_molpcba", "ogbg_ppa", "ogbn_arxiv", "peptides_func", "peptides_struct", "proteins", "ptc_mr", "zinc", "ogbn_products" ]
+  layer: # Layer
+    values: ["gcn", "gat", "gat2", "gin", "graphgps", "pna"]
+  ssma: # Whether to use SSMA or not
+    values: ["false"]
+  aggr:
+    values:
+      [ "GenAgg", "LSTM", "sum", "mean", "min", "max", "mul" ]
+  runs: # Num runs
+    values: [5]
+
+command:
+  - ${env}
+  - sh
+  - ${program}
+  - ${args_no_hyphens}

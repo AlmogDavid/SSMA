@@ -1,0 +1,22 @@
+program: graph_gps_exp/graph_gps.py
+name: graphgps_zinc_ablation
+method: grid
+parameters:
+  use_ssma:
+    values: [ "true", "false" ]
+  compression_ssma:
+    values: [ 0.1, 0.25, 0.5, 0.75, 1.0 ]
+  attention_ssma:
+    values: [ "true", "false" ]
+  max_neighbors_ssma:
+    values: [ 2, 3, 4 ]
+  use_pe:
+    values: [ "true", "false" ]
+  parameter_budget:
+    values: [ 100000, 500000 ]
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args}

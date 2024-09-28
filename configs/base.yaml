@@ -1,0 +1,70 @@
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+debug: false
+save_affine_mat: false
+
+# Data
+dataset: ???
+use_edge_feat: true
+k_fold: 0
+
+# Model
+model: ???
+depth: ???
+hidden_dim: ???
+batch_norm: true
+residual: true
+dropout: 0
+aggr: "add"
+layer_type: ???
+readout: "mean"
+parameter_budget: 500000
+
+# SSMA params
+mlp_compression: 1.0
+max_neighbors: 4
+use_attention: true
+temp: 1.0
+learn_affine: false
+
+# PNA params
+towers_pna: 5
+scalers_pna: ["identity", "amplification" ,"attenuation"]
+
+# GIN params
+n_mlp_GIN: 2
+learn_eps_GIN: true
+
+# GraphGPS params
+n_heads_gps: 4
+use_pe_gps: true
+rw_pe_depth_gps: 20
+
+# GAT Params
+n_heads_gat: 8
+
+# GATV2 Params
+n_heads_gat2: 8
+
+# Training
+seed: 1234
+eval_every: 256
+batch_size: ???
+
+
+init_lr: 1e-3
+lr_reduce_factor: 0.5
+lr_schedule_patience: 5
+min_lr: 1e-6
+
+weight_decay: 1e-5
+
+runs: 5

@@ -1,0 +1,16 @@
+defaults:
+  - base
+  - _self_
+
+# Data
+dataset: OGBG_MOLPCBA
+
+# Model
+model: OGBGNet
+depth: 5
+hidden_dim: 256
+
+# Training
+batch_size: 32
+eval_every: 4096
+parameter_budget: 2000000

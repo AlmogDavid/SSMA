@@ -1,0 +1,14 @@
+defaults:
+  - base
+  - _self_
+
+# Data
+dataset: OGBG_MOLHIV
+
+# Model
+model: OGBGNet
+depth: 10
+hidden_dim: 128
+
+# Training
+batch_size: 32

@@ -1,0 +1,16 @@
+defaults:
+  - base
+  - _self_
+
+# Data
+dataset: PeptidesFunc
+
+# Model
+model: OGBGNet
+depth: 5
+hidden_dim: 300
+parameter_budget: 2000000
+
+# Training
+batch_size: 16
+eval_every: 1024

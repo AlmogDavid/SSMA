@@ -1,0 +1,29 @@
+program: scripts/run_single_exp.sh
+name: compression_ablation
+method: grid
+parameters:
+  dataset: # DS
+    values: ["ogbn_arxiv", "zinc"]
+  layer: # Layer
+    values: ["gat", "gcn", "gin"]
+  ssma: # Whether to use SSMA or not
+    value: "true"
+  runs: # Num runs
+    value: 5
+  mlp_compression:
+    values: [0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 0.75, 1.0]
+  max_neighbors:
+    values: [4]
+  parameter_budget:
+    value: -1
+  hidden_dim:
+    value: 130
+  use_attention:
+    values: ["true"]
+
+
+command:
+  - ${env}
+  - sh
+  - ${program}
+  - ${args_no_hyphens}

@@ -1,0 +1,20 @@
+defaults:
+  - base
+  - _self_
+
+# Data
+dataset: ENZYMES
+k_fold: 10
+
+# Model
+model: RegMPNet
+depth: 6
+hidden_dim: 256
+readout: "max"
+dropout: 0.05
+
+# SSMA
+max_neighbors: 7
+
+# Training
+batch_size: 32

@@ -1,0 +1,17 @@
+defaults:
+  - base
+  - _self_
+
+# Data
+dataset: PTC_MR
+k_fold: 10
+
+# Model
+model: RegMPNet
+depth: 6
+hidden_dim: 256
+readout: "max"
+dropout: 0.05
+
+# Training
+batch_size: 32
