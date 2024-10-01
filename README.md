@@ -78,12 +78,13 @@ This project is licensed under the MIT License.
 If you use this work in your research, please cite the following paper:
 
 ``` bibtex
-@article{ssma_neurips2024,
-  title={Sequential Signal Mixing Aggregation for Message Passing Graph Neural Networks},
-  author={Author1, Author2, Author3},
-  journal={NeurIPS},
-  year={2024}
+@misc{taraday2024sequentialsignalmixingaggregation,
+      title={Sequential Signal Mixing Aggregation for Message Passing Graph Neural Networks}, 
+      author={Mitchell Keren Taraday and Almog David and Chaim Baskin},
+      year={2024},
+      eprint={2409.19414},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2409.19414}, 
 }
-```
-
 ```

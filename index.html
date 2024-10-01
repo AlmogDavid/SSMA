@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta content="DESCRIPTION META TAG" name="description">
+    <meta content="SOCIAL MEDIA TITLE TAG" property="og:title"/>
+    <meta content="SOCIAL MEDIA DESCRIPTION TAG TAG" property="og:description"/>
+    <meta content="URL OF THE WEBSITE" property="og:url"/>
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta content="static/image/your_banner_image.png" property="og:image"/>
+    <meta content="1200" property="og:image:width"/>
+    <meta content="630" property="og:image:height"/>
+
+    <!-- Keywords for your paper to be indexed by-->
+    <meta content="GNN, MPGNN" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+
+    <title>Sequential Signal Mixing Aggregation for Message Passing Graph Neural Networks</title>
+    <link href="static/images/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link href="static/css/bulma.min.css" rel="stylesheet">
+    <link href="static/css/bulma-carousel.min.css" rel="stylesheet">
+    <link href="static/css/bulma-slider.min.css" rel="stylesheet">
+    <link href="static/css/fontawesome.all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+          rel="stylesheet">
+    <link href="static/css/index.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Sequential Signal Mixing Aggregation for Message Passing
+                        Graph Neural Networks</h1>
+                    <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                        <span class="author-block">
+                <a href="mailto:butovsky.mitchell@gmail.com" target="_blank">Mitchell Keren Taraday [1]</a><sup>*</sup>,</span>
+                        <span class="author-block">
+                  <a href="mailto:almogdavid@gmail.com" target="_blank"> Almog David [1]</a><sup>*</sup>,</span>
+                        <span class="author-block">
+                    <a href="mailto:chaimbaskin@bgu.ac.il" target="_blank">Chaim Baskin [2]</a>
+                  </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">[1] - Department of Computer Science, Technion<br>[2] - School of Electrical and Computer Engineering Ben-Gurion University of the Negev<br>NeurIPS 2024, the Thirty-Eighth Annual Conference on Neural Information Processing Systems</span>
+                        <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- Arxiv PDF link -->
+                            <span class="link-block">
+                        <a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/pdf/2409.19414"
+                           target="_blank">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                            <!-- Github link -->
+                            <span class="link-block">
+                    <a class="external-link button is-normal is-rounded is-dark" href="https://github.com/AlmogDavid/SSMA"
+                       target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                            <!-- ArXiv abstract Link -->
+                            <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2409.19414"
+                     target="_blank">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Message Passing Graph Neural Networks (MPGNNs) have emerged as the pre-
+                        ferred method for modeling complex interactions across diverse graph entities.
+                        While the theory of such models is well understood, their aggregation module has
+                        not received sufficient attention. Sum-based aggregators have solid theoretical foun-
+                        dations regarding their separation capabilities. However, practitioners often prefer
+                        using more complex aggregations and mixtures of diverse aggregations. In this
+                        work, we unveil a possible explanation for this gap. We claim that sum-based aggre-
+                        gators fail to "mix" features belonging to distinct neighbors, preventing them from
+                        succeeding at downstream tasks. To this end, we introduce Sequential Signal Mix-
+                        ing Aggregation (SSMA), a novel plug-and-play aggregation for MPGNNs. SSMA
+                        treats the neighbor features as 2D discrete signals and sequentially convolves them,
+                        inherently enhancing the ability to mix features attributed to distinct neighbors.
+                        By performing extensive experiments, we show that when combining SSMA with
+                        well-established MPGNN architectures, we achieve substantial performance gains
+                        across various benchmarks, achieving new state-of-the-art results in many settings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="carousel results-carousel" id="results-carousel">
+                <div class="item" style="text-align: center;">
+                    <!-- Your image here -->
+                    <img alt="Method" src="method_fig.png"/>
+                    <h2 class="subtitle has-text-centered">
+                        Method overview
+                    </h2>
+                </div>
+                <div class="item" style="text-align: center;">
+                    <!-- Your image here -->
+                    <img alt="result-0" src="results_0.png"/>
+                    <h2 class="subtitle has-text-centered">
+                        Results
+                    </h2>
+                </div>
+                <div class="item" style="text-align: center;">
+                    <!-- Your image here -->
+                    <img alt="result-1" src="results_1.png"/>
+                    <h2 class="subtitle has-text-centered">
+                        Results cont'd
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+
+<!--&lt;!&ndash; Youtube video &ndash;&gt;-->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--      <h2 class="title is-3">Video Presentation</h2>-->
+<!--      <div class="columns is-centered has-text-centered">-->
+<!--        <div class="column is-four-fifths">-->
+<!--          -->
+<!--          <div class="publication-video">-->
+<!--            &lt;!&ndash; Youtube embed code here &ndash;&gt;-->
+<!--            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; End youtube video &ndash;&gt;-->
+
+<!--&lt;!&ndash; Paper poster &ndash;&gt;-->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title">Poster</h2>-->
+
+<!--      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">-->
+<!--          </iframe>-->
+<!--        -->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--&lt;!&ndash;End paper poster &ndash;&gt;-->
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@misc{taraday2024sequentialsignalmixingaggregation,
+      title={Sequential Signal Mixing Aggregation for Message Passing Graph Neural Networks},
+      author={Mitchell Keren Taraday and Almog David and Chaim Baskin},
+      year={2024},
+      eprint={2409.19414},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2409.19414},
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+
+                    <p>
+                        This page was built using the <a
+                            href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                        Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io"
+                                                                                target="_blank">Nerfies</a> project
+                        page.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
