@@ -5,22 +5,23 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
-from torch_geometric.nn import Aggregation
+from torch_geometric.nn.aggr import Aggregation
 from torch_geometric.utils import softmax
 from torch_scatter import scatter_add, scatter_mean, scatter_sum
 
 
 class SSMA(Aggregation):
     """
-    Sequential Signal Mixing Aggregation (SSMA) method for MPGNNs
+    Performs the Sequential Signal Mixing Aggregation (SSMA) method from the
+    `"Sequential Signal Mixing Aggregation for Message Passing Graph Neural Networks"<https://arxiv.org/abs/2409.19414>`_ paper.
     """
 
     def __init__(self,
                  in_dim: int,
                  num_neighbors: int,
                  mlp_compression: float = 1.0,
-                 n_heads: int = 1,
                  use_attention: bool = True,
+                 n_heads: int = 1,
                  temp: float = 1.0,
                  att_feature: str = "x",
                  learn_affine: bool = False):
@@ -28,10 +29,10 @@ class SSMA(Aggregation):
         :param in_dim: The input dimension of the node features
         :param num_neighbors: Maximal number of neighbors to aggregate for each node
         :param mlp_compression: The compression ratio for the last MLP, if less than 1.0, the MLP will be factorized
-        :param n_heads: Number of attention heads to use, if use_attention is True.
         :param use_attention: If True will use attention mechanism for selecting the neighbors, otherwise will use all neighbors.
-        :param temp: The attention temperature to use, if use_attention is True.
-        :param att_feature: The feature to use for computing the attention weights, if use_attention is True.
+        :param n_heads: Number of attention heads to use, if "use_attention" is True.
+        :param temp: The attention temperature to use, if "use_attention" is True.
+        :param att_feature: The feature to use for computing the attention weights, if "use_attention" is True.
         :param learn_affine: If True, will learn the affine transformation, otherwise will use a fixed one.
         """
         super().__init__()
@@ -84,7 +85,8 @@ class SSMA(Aggregation):
     def _compute_attention(self,
                            x: torch.Tensor,
                            edge_index: torch.Tensor) -> torch.Tensor:
-        # Compute attention weights as in GAT, each input is devided to groups, each group has its own attention per number of neighbors
+        # Compute attention weights, each input is split into groups,
+        # each group has its own attention per number of neighbors.
         # So we have  #groups * #neighbors attention weights
         x_l = self.attn_l(x.reshape(x.size(0), -1))
         x_r = self.attn_r(x.reshape(x.size(0), -1))
@@ -114,8 +116,11 @@ class SSMA(Aggregation):
                 index: Optional[Tensor] = None,
                 ptr: Optional[Tensor] = None,
                 dim_size: Optional[int] = None,
-                dim: int = -2) -> Tensor:
-        assert self._pre_hook_run, "Have to run pre hook first"
+                dim: int = -2,
+                max_num_elements: Optional[int] = None, ) -> Tensor:
+        assert self._pre_hook_run, \
+            ("Have to run pre hook first, please make sure you register 'pre_aggregation_hook' to the layer: "
+             "layer.register_propagate_forward_pre_hook(ssma.pre_aggregation_hook)")
 
         x_in_shape = x.shape
         x = x.reshape(x.size(0), self._n_heads, -1)
@@ -161,8 +166,8 @@ class SSMA(Aggregation):
         return "".join((f'SSMA(in_dim={self._in_dim},'
                         f'num_neighbors={self._max_neighbors},'
                         f'mlp_compression={self._mlp_compression},'
-                        f'n_heads={self._n_heads},'
                         f'use_attention={self._use_attention},'
+                        f'n_heads={self._n_heads},'
                         f'temp={self._attention_temp},'
-                        f'att_feature={self._att_feature}',
+                        f'att_feature=\'{self._att_feature}\',',
                         f'learn_affine={self._learn_affine})'))
